@@ -38,14 +38,15 @@ const useStyles = makeStyles(theme => ({
 }));
 
 type Props = {
-  container: any;
+  container?: any;
 };
+
 export default (props: Props) => {
   const classes = useStyles(props);
   return (
-    // <React.Fragment>
+    // <div>
     <Drawer
-      // container={props.container}
+      container={props.container}
       className={classes.drawer}
       variant="permanent"
       classes={{
@@ -66,6 +67,6 @@ export default (props: Props) => {
         ))}
       </List>
     </Drawer>
-    // </React.Fragment>
+    // {/* </div> */}
   );
 };
