@@ -5,7 +5,7 @@ import Box from '@material-ui/core/Box';
 import MuiLink from '@material-ui/core/Link';
 import Button from '@material-ui/core/Button';
 // import ProTip from '../src/ProTip';
-import Link from '../Link';
+import Link from '../components/navigation/Link';
 
 function Copyright() {
   return (

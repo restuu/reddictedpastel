@@ -1,11 +1,5 @@
 import React from 'react';
-import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
-import Head from 'next/head';
-import Nav from '../components/nav';
-import Typography from '@material-ui/core/Typography';
-
-import NavigationDrawer from '../components/NavigationDrawer';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -35,12 +29,24 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+const routes = [
+  {
+    label: 'Home',
+    href: '/',
+    value: 'home',
+  },
+  {
+    label: 'About',
+    href: '/about',
+    value: 'about',
+  },
+];
+
 const Home = props => {
   const classes = useStyles(props);
   return (
     <Box p={1} className={classes.root}>
-      <NavigationDrawer container={Box} />
-      <Box className={classes.content}>
+      {/* <Box className={classes.content}>
         <div className={classes.toolbar} />
         <Typography paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
@@ -52,7 +58,7 @@ const Home = props => {
           lobortis feugiat vivamus at augue. At augue eget arcu dictum varius duis at consectetur lorem. Velit sed
           ullamcorper morbi tincidunt. Lorem donec massa sapien faucibus et molestie ac.
         </Typography>
-      </Box>
+      </Box> */}
     </Box>
   );
 };

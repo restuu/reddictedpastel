@@ -50,6 +50,17 @@ Link.propTypes = {
   prefetch: PropTypes.bool,
 };
 
-export default React.forwardRef<{ innerRef: any; children: any }>((props, ref) => (
+type Props = {
+  activeClassName?: string;
+  as?: string;
+  className?: string;
+  href: string;
+  naked?: boolean;
+  onClick?: (...args: any[]) => any;
+  prefetch?: boolean;
+  children: any;
+};
+
+export default React.forwardRef<{ innerRef: any; children: any }, Props>((props, ref) => (
   <Link {...props} innerRef={ref} />
-)) as any;
+));
