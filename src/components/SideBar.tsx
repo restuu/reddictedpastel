@@ -9,11 +9,7 @@ import SideProfile from './SideProfile';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    // height: '90vh',
-    paddingTop: '2em',
     height: '100%',
-
-    border: '1px solid red',
   },
 }));
 

@@ -17,8 +17,6 @@ import theme from '../theme';
 const useStyles = makeStyles(theme => ({
   root: {
     paddingTop: 50,
-
-    backgroundColor: 'grey',
   },
 }));
 
