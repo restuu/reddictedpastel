@@ -45,7 +45,7 @@ export default function MyApp(props: AppProps) {
           <Box mb={2}>
             <Grid container>
               <Grid item xs={12} sm={3}></Grid>
-              <Grid item xs={12} sm={9} direction="column">
+              <Grid item xs={12} sm={9}>
                 <NavigationTabs />
               </Grid>
             </Grid>
@@ -56,7 +56,7 @@ export default function MyApp(props: AppProps) {
                 <SideBar />
               </Box>
             </Grid>
-            <Grid item xs={12} sm={9} direction="column">
+            <Grid item xs={12} sm={9}>
               <Container>
                 <Component {...pageProps} />
               </Container>
