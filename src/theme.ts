@@ -3,6 +3,9 @@ import { red, yellow } from '@material-ui/core/colors';
 
 // Create a theme instance
 const theme = createMuiTheme({
+  typography: {
+    fontFamily: ['nunito'].join(','),
+  },
   palette: {
     primary: {
       main: '#556cd6',

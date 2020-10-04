@@ -1,62 +1,71 @@
 import React from 'react';
-import App from 'next/app';
+import { AppProps } from 'next/app';
 import Head from 'next/head';
 
-import { ThemeProvider } from '@material-ui/core/styles';
+import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { styled } from '@material-ui/core/styles';
 
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
 
 import NavigationTabs from '../components/NavigationTabs';
 import SideBar from '../components/SideBar';
 
 import theme from '../theme';
 
-const MyContainer = styled(Container)({
-  paddingTop: 50,
-  // height: '90vh',
+const useStyles = makeStyles(theme => ({
+  root: {
+    paddingTop: 50,
 
-  backgroundColor: 'grey',
-});
+    backgroundColor: 'grey',
+  },
+}));
 
-export default class MyApp extends App {
-  componentDidMount() {
+export default function MyApp(props: AppProps) {
+  React.useEffect(() => {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector('#jss-server-side');
     if (jssStyles) {
-      jssStyles.parentElement.removeChild(jssStyles);
+      jssStyles.parentElement!.removeChild(jssStyles);
     }
-  }
+  }, []);
 
-  render() {
-    const { Component, pageProps } = this.props;
+  const classes = useStyles();
+  const { Component, pageProps } = props;
 
-    return (
-      <>
-        <Head>
-          <title>My page</title>
-        </Head>
-        <ThemeProvider theme={theme}>
-          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-          <CssBaseline />
-          <MyContainer>
+  return (
+    <>
+      <Head>
+        <title>My page</title>
+        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+      </Head>
+      <ThemeProvider theme={theme}>
+        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+        <CssBaseline />
+        <Container className={classes.root}>
+          <Box mb={2}>
             <Grid container>
-              <Grid item xs={12} sm={3}>
-                <SideBar />
-              </Grid>
-              <Grid item xs={12} sm={9}>
+              <Grid item xs={12} sm={3}></Grid>
+              <Grid item xs={12} sm={9} direction="column">
                 <NavigationTabs />
-
-                <Container>
-                  <Component {...pageProps} />
-                </Container>
               </Grid>
             </Grid>
-          </MyContainer>
-        </ThemeProvider>
-      </>
-    );
-  }
+          </Box>
+          <Grid container>
+            <Grid item xs={12} sm={3}>
+              <Box height="80vh">
+                <SideBar />
+              </Box>
+            </Grid>
+            <Grid item xs={12} sm={9} direction="column">
+              <Container>
+                <Component {...pageProps} />
+              </Container>
+            </Grid>
+          </Grid>
+        </Container>
+      </ThemeProvider>
+    </>
+  );
 }
