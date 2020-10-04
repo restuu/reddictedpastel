@@ -8,6 +8,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
+import Hidden from '@material-ui/core/Hidden';
 
 import NavigationTabs from '../components/NavigationTabs';
 import SideBar from '../components/SideBar';
@@ -50,12 +51,14 @@ export default function MyApp(props: AppProps) {
               </Grid>
             </Grid>
           </Box>
-          <Grid container>
-            <Grid item xs={12} sm={3}>
-              <Box height="80vh">
-                <SideBar />
-              </Box>
-            </Grid>
+          <Grid container alignItems="stretch">
+            <Hidden only={['xs']}>
+              <Grid item sm={3}>
+                <Box height="80vh">
+                  <SideBar />
+                </Box>
+              </Grid>
+            </Hidden>
             <Grid item xs={12} sm={9}>
               <Container>
                 <Component {...pageProps} />
