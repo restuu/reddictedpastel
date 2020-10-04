@@ -2,7 +2,7 @@ import React from 'react';
 import Link from './navigation/Link';
 import Grid from '@material-ui/core/Grid';
 
-import { styled } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 const routes = [
   {
@@ -27,16 +27,25 @@ const routes = [
   },
 ];
 
-const MyLink = styled(Link)({
-  color: 'yellow',
-});
+const useStyles = makeStyles(theme => ({
+  appLink: {
+    color: theme.palette.text.primary,
+  },
+  activeAppLink: {
+    color: theme.palette.text.secondary,
+  },
+}));
 
 function NavigationTabs() {
+  const classes = useStyles();
+
   return (
-    <Grid container justify="space-evenly" xs={12}>
+    <Grid container justify="space-evenly">
       {routes.map(opt => (
-        <Grid item>
-          <MyLink href={opt.href}>{opt.label}</MyLink>
+        <Grid key={opt.value} item>
+          <Link className={classes.appLink} href={opt.href} activeClassName={classes.activeAppLink}>
+            {opt.label}
+          </Link>
         </Grid>
       ))}
     </Grid>
