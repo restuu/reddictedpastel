@@ -9,12 +9,16 @@ import { styled } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 
-import NavigationTabs from '../components/navigation/NavigationTabs';
+import NavigationTabs from '../components/NavigationTabs';
+import SideBar from '../components/SideBar';
 
 import theme from '../theme';
 
 const MyContainer = styled(Container)({
-  marginTop: 10,
+  paddingTop: 50,
+  // height: '90vh',
+
+  backgroundColor: 'grey',
 });
 
 export default class MyApp extends App {
@@ -39,8 +43,10 @@ export default class MyApp extends App {
           <CssBaseline />
           <MyContainer>
             <Grid container>
-              <Grid item xs={3}></Grid>
-              <Grid item xs={9}>
+              <Grid item xs={12} sm={3}>
+                <SideBar />
+              </Grid>
+              <Grid item xs={12} sm={9}>
                 <NavigationTabs />
 
                 <Container>
