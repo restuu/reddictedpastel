@@ -5,7 +5,8 @@ import { useRouter } from 'next/router';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 
-import SideProfile from './SideProfile';
+import SideProfile from './sidebar/SideProfile';
+import SideList from './sidebar/SideList';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -21,6 +22,8 @@ function SideBar() {
     switch (router.pathname) {
       case '/':
         return <SideProfile />;
+      case '/works':
+        return <SideList />;
 
       default:
         return null;
