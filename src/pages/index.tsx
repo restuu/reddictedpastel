@@ -23,7 +23,7 @@ const Home = props => {
         libero. Etiam rhoncus magna a sapien mattis condimentum. Suspendisse eu ante a tellus vestibulum efficitur et in
         enim. Fusce non feugiat mi. Sed interdum lacus ut orci tincidunt vestibulum.
       </Typography>
-      <Typography variant="subtitle2">
+      <Typography variant="h1">
         Sed felis urna, mollis ac placerat tincidunt, bibendum et ligula. Nulla id eleifend risus. Etiam massa quam,
         bibendum vel vulputate non, dictum vel tellus. Nunc nibh massa, venenatis fermentum dapibus nec, feugiat non
         diam. Vivamus egestas nibh tellus, in lobortis velit congue ac. Vestibulum ante ipsum primis in faucibus orci

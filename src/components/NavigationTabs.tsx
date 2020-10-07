@@ -1,6 +1,9 @@
 import React from 'react';
 import Link from './navigation/Link';
+
 import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -46,7 +49,7 @@ function NavigationTabs() {
   const handleClick = (href: string) => e => {
     e.preventDefault();
 
-    if (href === 'http://blog.reddictedpastel.com/') {
+    if (href.startsWith('http')) {
       window.open(href);
       return;
     }
@@ -64,7 +67,7 @@ function NavigationTabs() {
             onClick={handleClick(opt.href)}
             activeClassName={classes.activeAppLink}
           >
-            {opt.label}
+            <Typography variant="h1">{opt.label}</Typography>
           </Link>
         </Grid>
       ))}

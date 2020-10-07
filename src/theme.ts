@@ -14,7 +14,9 @@ const riicchan: any = {
 const theme = createMuiTheme({
   typography: {
     fontFamily: ['nunito'].join(','),
-    subtitle2: { fontFamily: 'riicchan, nunito', fontSize: 24 },
+
+    h1: { fontFamily: 'riicchan', fontSize: 30, textTransform: 'uppercase', letterSpacing: 2 },
+    h2: { fontFamily: 'riicchan', fontSize: 27 },
   },
   overrides: {
     MuiCssBaseline: {

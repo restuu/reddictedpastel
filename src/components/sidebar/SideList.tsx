@@ -1,8 +1,9 @@
 import React from 'react';
 
 import List from '@material-ui/core/List';
-
 import ListItemText from '@material-ui/core/ListItemText';
+import Typography from '@material-ui/core/Typography';
+
 import { makeStyles } from '@material-ui/core/styles';
 import ListItemLink from '../navigation/ListItemLink';
 
@@ -27,9 +28,10 @@ const list = [
 const useStyles = makeStyles(theme => ({
   root: {
     minHeight: '50%',
-    backgroundColor: 'pink',
   },
-  itemList: {},
+  itemList: {
+    marginBottom: '-1rem',
+  },
 }));
 
 function SideList() {
@@ -38,8 +40,8 @@ function SideList() {
   return (
     <List component="nav" className={classes.root}>
       {list.map((el, i) => (
-        <ListItemLink key={`work-list-${i}`} href="/works">
-          <ListItemText primary={el.title} />
+        <ListItemLink className={classes.itemList} key={`work-list-${i}`} href="/works">
+          <ListItemText primary={<Typography variant="h2">{el.title}</Typography>} />
         </ListItemLink>
       ))}
     </List>
