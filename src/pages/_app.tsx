@@ -10,7 +10,7 @@ import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Hidden from '@material-ui/core/Hidden';
 
-import NavigationTabs from '../components/NavigationTabs';
+import NavigationTabs from '../components/app/NavigationTabs';
 import SideBar from '../components/SideBar';
 
 import theme from '../theme';

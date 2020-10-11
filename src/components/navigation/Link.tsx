@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
-import NextLink from 'next/link';
+import NextLink, { LinkProps } from 'next/link';
 import MuiLink from '@material-ui/core/Link';
 
 const NextComposed = React.forwardRef(function NextComposed(props, ref) {
@@ -25,6 +25,8 @@ NextComposed.propTypes = {
 // A styled version of the Next.js Link component:
 // https://nextjs.org/docs/#with-link
 const Link: React.FunctionComponent<any> = (props: any) => {
+  const [isHover, setIsHover] = useState(false);
+
   const { href, activeClassName = 'active', className: classNameProps, innerRef, naked, ...other } = props;
 
   const router = useRouter();
@@ -33,11 +35,29 @@ const Link: React.FunctionComponent<any> = (props: any) => {
     [activeClassName]: router.pathname === pathname && activeClassName,
   });
 
+  const handleMouseOver = (bool: boolean) => {
+    if (props.onHover) {
+      props.onHover(bool);
+    }
+
+    setIsHover(bool);
+  };
+
   if (naked) {
     return <NextComposed className={className} ref={innerRef} href={href} {...other} />;
   }
 
-  return <MuiLink component={NextComposed} className={className} ref={innerRef} href={href} {...other} />;
+  return (
+    <MuiLink
+      onMouseOver={props.onHoverIn}
+      onMouseOut={props.onHoverOut}
+      component={NextComposed}
+      className={className}
+      ref={innerRef}
+      href={href}
+      {...other}
+    />
+  );
 };
 
 Link.propTypes = {
@@ -60,6 +80,8 @@ type Props = {
   onClick?: (...args: any[]) => any;
   prefetch?: boolean;
   children: any;
+  onHoverIn?: () => any;
+  onHoverOut?: () => any;
 };
 
 export default React.forwardRef<any, Props>((props, ref) => <Link {...props} innerRef={ref} />);

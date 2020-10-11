@@ -1,8 +1,6 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 import { red, yellow, grey } from '@material-ui/core/colors';
 
-// import Riicchan from './assets/font/Riicchan-Regular.ttf';
-
 const riicchan: any = {
   fontFamily: 'riicchan',
   fontStyle: 'normal',
