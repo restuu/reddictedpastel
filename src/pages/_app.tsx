@@ -60,9 +60,9 @@ export default function MyApp(props: AppProps) {
               </Grid>
             </Hidden>
             <Grid item xs={12} sm={9}>
-              <Container>
+              <Box ml={1}>
                 <Component {...pageProps} />
-              </Container>
+              </Box>
             </Grid>
           </Grid>
         </Container>

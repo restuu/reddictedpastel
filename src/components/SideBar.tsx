@@ -6,7 +6,7 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 
 import SideProfile from './sidebar/SideProfile';
-import SideList from './sidebar/SideList';
+import SideWorkList from './sidebar/SideWorkList';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -23,7 +23,7 @@ function SideBar() {
       case '/':
         return <SideProfile />;
       case '/works':
-        return <SideList />;
+        return <SideWorkList />;
 
       default:
         return null;

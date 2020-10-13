@@ -34,7 +34,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function SideList() {
+function SideWorkList() {
   const classes = useStyles();
 
   return (
@@ -48,4 +48,4 @@ function SideList() {
   );
 }
 
-export default SideList;
+export default SideWorkList;

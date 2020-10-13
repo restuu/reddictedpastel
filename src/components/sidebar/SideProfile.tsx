@@ -2,6 +2,9 @@ import React from 'react';
 
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+
+import Link from '../navigation/Link';
 
 const useStyle = makeStyles(theme => ({
   root: {
@@ -25,6 +28,9 @@ const useStyle = makeStyles(theme => ({
 
     border: '1px solid yellow',
   },
+  contactMeLink: {
+    color: theme.palette.text.primary,
+  },
   badge: {
     height: '20%',
     marginBottom: 'auto',
@@ -44,7 +50,11 @@ function SideProfile() {
         Soc Med
       </Grid>
       <Grid className={classes.contact} item>
-        Contact
+        <Link className={classes.contactMeLink} href="/contact_me">
+          <Typography component="span" variant="h1" style={{ verticalAlign: 'bottom' }}>
+            Contact Me
+          </Typography>
+        </Link>
       </Grid>
       <Grid className={classes.badge} item>
         Badge

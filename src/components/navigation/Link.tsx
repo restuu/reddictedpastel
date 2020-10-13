@@ -79,7 +79,7 @@ type Props = {
   naked?: boolean;
   onClick?: (...args: any[]) => any;
   prefetch?: boolean;
-  children: any;
+  children?: any;
   onHoverIn?: () => any;
   onHoverOut?: () => any;
 };
