@@ -15,7 +15,7 @@
   },
   "functions": {
     "source": ".",
-    "runtime": "nodejs8",
+    "runtime": "nodejs10",
     "predeploy": [
       "npm --prefix \"$RESOURCE_DIR\" run build"
     ]

@@ -1,6 +1,4 @@
 const functions = require("firebase-functions")
-// hack for firebase functions nodejs8
-global.URL = require('url').URL;
 
 const { parse } = require('url')
 const next = require('next')

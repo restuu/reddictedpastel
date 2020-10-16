@@ -2,7 +2,7 @@
   "name": "reddictedpastel",
   "version": "0.1.0",
   "engines": {
-    "node": "8"
+    "node": "10"
   },
   "private": true,
   "main": "function.js",
