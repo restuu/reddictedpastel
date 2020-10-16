@@ -34,10 +34,10 @@ const theme = createMuiTheme({
       main: red.A400,
     },
     background: {
-      default: grey.A700,
+      // default: grey.A700,
     },
     text: {
-      primary: yellow.A400,
+      primary: '#383838',
       secondary: '#00e5ff',
     },
   },

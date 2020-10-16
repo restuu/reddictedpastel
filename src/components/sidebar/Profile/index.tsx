@@ -14,6 +14,15 @@ const useStyles = makeStyles(theme =>
       backgroundColor: 'transparent',
       boxShadow: 'none',
     },
+    imageContainer: {
+      marginBottom: '-1rem',
+    },
+    name: {
+      fontFamily: 'riicchan',
+      fontSize: 40,
+      marginBottom: '0.5rem',
+      textAlign: 'center',
+    },
   }),
 );
 
@@ -23,12 +32,13 @@ function Profile() {
   return (
     <Card className={classes.root}>
       {/* TODO: Save image in storage and serve as href */}
-      <Grid container justify="center">
+      <Grid className={classes.imageContainer} container justify="center">
         <Grid item xs={10}>
           <CardMedia component="img" image="/images/Profile.png" />
         </Grid>
       </Grid>
       <CardContent>
+        <Typography className={classes.name}>Listya Ariputri</Typography>
         <Typography variant="subtitle2">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi rhoncus eget dolor sit amet aliquet.
           Suspendisse molestie dolor sit amet maximus eleifend.

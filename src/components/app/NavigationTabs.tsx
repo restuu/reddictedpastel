@@ -37,10 +37,10 @@ const useStyles = makeStyles(theme => ({
     height: '3.5rem',
   },
   appLink: {
-    color: theme.palette.text.primary,
+    color: '#8ed7d5',
   },
   activeAppLink: {
-    color: theme.palette.text.secondary,
+    color: '#fa93a5',
   },
   appLinkHover: {
     fontSize: 40,
