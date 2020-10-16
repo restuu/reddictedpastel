@@ -2,38 +2,34 @@ import React from 'react';
 
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
 
-import Link from '../navigation/Link';
+import LinkContactMe from './LinkContactMe';
 
 const useStyle = makeStyles(theme => ({
   root: {
     height: '100%',
   },
   profile: {
-    minHeight: '45%',
-    marginBottom: 'auto',
+    minHeight: '20rem',
+    marginBottom: '1rem',
 
     backgroundColor: 'pink',
   },
   socialMedia: {
-    height: '12%',
-    marginBottom: 'auto',
+    height: '5rem',
+    marginBottom: '1rem',
 
     backgroundColor: 'pink',
   },
   contact: {
-    height: '12%',
-    marginBottom: 'auto',
-
-    border: '1px solid yellow',
+    height: '5rem',
+    marginBottom: '1rem',
   },
   contactMeLink: {
     color: theme.palette.text.primary,
   },
   badge: {
-    height: '20%',
-    marginBottom: 'auto',
+    height: '7rem',
     border: '1px solid yellow',
   },
 }));
@@ -50,11 +46,7 @@ function SideProfile() {
         Soc Med
       </Grid>
       <Grid className={classes.contact} item>
-        <Link className={classes.contactMeLink} href="/contact_me">
-          <Typography component="span" variant="h1" style={{ verticalAlign: 'bottom' }}>
-            Contact Me
-          </Typography>
-        </Link>
+        <LinkContactMe href="/contact_me" />
       </Grid>
       <Grid className={classes.badge} item>
         Badge

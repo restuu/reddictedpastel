@@ -54,7 +54,7 @@ export default function MyApp(props: AppProps) {
           <Grid container alignItems="stretch">
             <Hidden only={['xs']}>
               <Grid item sm={3}>
-                <Box height="80vh">
+                <Box>
                   <SideBar />
                 </Box>
               </Grid>
