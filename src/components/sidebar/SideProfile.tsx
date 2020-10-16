@@ -3,6 +3,7 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 
+import Profile from './Profile';
 import LinkContactMe from './LinkContactMe';
 import LinkBadgeKofi from './LinkBadge/LinkBadgeKofi';
 
@@ -11,10 +12,7 @@ const useStyle = makeStyles(theme => ({
     height: '100%',
   },
   profile: {
-    minHeight: '20rem',
     marginBottom: '1rem',
-
-    backgroundColor: 'pink',
   },
   socialMedia: {
     height: '5rem',
@@ -37,7 +35,7 @@ function SideProfile() {
   return (
     <Grid className={classes.root} container direction="column" justify="flex-start">
       <Grid className={classes.profile} item>
-        Profile
+        <Profile />
       </Grid>
       <Grid className={classes.socialMedia} item>
         Soc Med
