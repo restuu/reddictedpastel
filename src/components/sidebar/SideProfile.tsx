@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 
 import LinkContactMe from './LinkContactMe';
+import LinkBadgeKofi from './LinkBadge/LinkBadgeKofi';
 
 const useStyle = makeStyles(theme => ({
   root: {
@@ -22,16 +23,12 @@ const useStyle = makeStyles(theme => ({
     backgroundColor: 'pink',
   },
   contact: {
-    height: '5rem',
     marginBottom: '1rem',
   },
   contactMeLink: {
     color: theme.palette.text.primary,
   },
-  badge: {
-    height: '7rem',
-    border: '1px solid yellow',
-  },
+  badge: {},
 }));
 
 function SideProfile() {
@@ -49,7 +46,7 @@ function SideProfile() {
         <LinkContactMe href="/contact_me" />
       </Grid>
       <Grid className={classes.badge} item>
-        Badge
+        <LinkBadgeKofi href="/" />
       </Grid>
     </Grid>
   );

@@ -27,18 +27,18 @@ const useStyles = makeStyles(theme =>
   }),
 );
 
-function LinkContactMe({ href }: Props) {
+function LinkBadgeKofi({ href }: Props) {
   const classes = useStyles();
 
   return (
     <Box display="flex">
       <Link href={href}>
         <Card className={classes.rootCard}>
-          <CardMedia component="img" className={classes.media} title="contact me" image="/images/Mail_Me.png" />
+          <CardMedia component="img" className={classes.media} title="Kofi" image="/images/Ko-Fi.png" />
         </Card>
       </Link>
     </Box>
   );
 }
 
-export default LinkContactMe;
+export default LinkBadgeKofi;
