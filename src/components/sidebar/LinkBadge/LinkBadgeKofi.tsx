@@ -32,7 +32,7 @@ function LinkBadgeKofi({ href }: Props) {
 
   return (
     <Box display="flex">
-      <Link href={href}>
+      <Link href={href} target="_blank">
         <Card className={classes.rootCard}>
           <CardMedia component="img" className={classes.media} title="Kofi" image="/images/Ko-Fi.png" />
         </Card>

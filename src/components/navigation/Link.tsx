@@ -76,6 +76,8 @@ type Props = {
   as?: string;
   className?: string;
   href: string;
+  /** default to _blank */
+  target?: string;
   naked?: boolean;
   onClick?: (...args: any[]) => any;
   prefetch?: boolean;

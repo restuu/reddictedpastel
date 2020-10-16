@@ -11,20 +11,18 @@ const useStyle = makeStyles(theme => ({
   root: {
     height: '100%',
   },
-  profile: {
-    marginBottom: '1rem',
-  },
+  profile: {},
   socialMedia: {
     height: '5rem',
-    marginBottom: '1rem',
 
     backgroundColor: 'pink',
   },
-  contact: {
-    marginBottom: '1rem',
-  },
+  contact: {},
   contactMeLink: {
     color: theme.palette.text.primary,
+  },
+  item: {
+    marginBottom: '1rem',
   },
   badge: {},
 }));
@@ -34,17 +32,17 @@ function SideProfile() {
 
   return (
     <Grid className={classes.root} container direction="column" justify="flex-start">
-      <Grid className={classes.profile} item>
+      <Grid className={`${classes.item} ${classes.profile}`} item>
         <Profile />
       </Grid>
-      <Grid className={classes.socialMedia} item>
+      <Grid className={`${classes.item} ${classes.socialMedia}`} item>
         Soc Med
       </Grid>
-      <Grid className={classes.contact} item>
+      <Grid className={`${classes.item} ${classes.contact}`} item>
         <LinkContactMe href="/contact_me" />
       </Grid>
-      <Grid className={classes.badge} item>
-        <LinkBadgeKofi href="/" />
+      <Grid className={`${classes.item} ${classes.badge}`} item>
+        <LinkBadgeKofi href="https://ko-fi.com/satheeayam" />
       </Grid>
     </Grid>
   );
