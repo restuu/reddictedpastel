@@ -31,7 +31,7 @@ function SideProfile() {
   const classes = useStyle();
 
   return (
-    <Grid className={classes.root} container direction="column" justify="flex-start">
+    <Grid className={classes.root} container direction="column">
       <Grid className={`${classes.item} ${classes.profile}`} item>
         <Profile />
       </Grid>

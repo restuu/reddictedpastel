@@ -38,7 +38,7 @@ function SideWorkList() {
   const classes = useStyles();
 
   return (
-    <List component="nav" className={classes.root}>
+    <List className={classes.root}>
       {list.map((el, i) => (
         <ListItemLink className={classes.itemList} key={`work-list-${i}`} href="/works">
           <ListItemText primary={<Typography variant="h2">{el.title}</Typography>} />

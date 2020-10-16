@@ -17,7 +17,12 @@ import theme from '../theme';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    paddingTop: 50,
+    paddingTop: '1rem',
+  },
+  pageContainer: {
+    [theme.breakpoints.up('sm')]: {
+      margin: '0 2rem 0 2rem',
+    },
   },
 }));
 
@@ -51,16 +56,16 @@ export default function MyApp(props: AppProps) {
               </Grid>
             </Grid>
           </Box>
-          <Grid container alignItems="stretch">
+          <Grid container justify="space-between">
             <Hidden only={['xs']}>
-              <Grid item sm={3}>
+              <Grid id="side-bar-container" item sm={3}>
                 <Box>
                   <SideBar />
                 </Box>
               </Grid>
             </Hidden>
             <Grid item xs={12} sm={9}>
-              <Box ml={1}>
+              <Box className={classes.pageContainer}>
                 <Component {...pageProps} />
               </Box>
             </Grid>
