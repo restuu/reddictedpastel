@@ -6,17 +6,14 @@ import { makeStyles } from '@material-ui/core/styles';
 import Profile from './Profile';
 import LinkContactMe from './LinkContactMe';
 import LinkBadgeKofi from './LinkBadge/LinkBadgeKofi';
+import SocialMedia from './SocialMedia';
 
 const useStyle = makeStyles(theme => ({
   root: {
     height: '100%',
   },
   profile: {},
-  socialMedia: {
-    height: '5rem',
-
-    backgroundColor: 'pink',
-  },
+  socialMedia: {},
   contact: {},
   contactMeLink: {
     color: theme.palette.text.primary,
@@ -36,7 +33,7 @@ function SideProfile() {
         <Profile />
       </Grid>
       <Grid className={`${classes.item} ${classes.socialMedia}`} item>
-        Soc Med
+        <SocialMedia />
       </Grid>
       <Grid className={`${classes.item} ${classes.contact}`} item>
         <LinkContactMe href="/contact_me" />
